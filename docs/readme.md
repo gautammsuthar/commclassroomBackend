@@ -1,10 +1,10 @@
 # Development Guide
 
 # Entites 
-Entities are "things" that we see in the project. for example, user, course, instructor, review, etc are all entities. Ideally all entities get a collection in the database.
+Entities are "things" that we see in the project for example user, course, instructor, review etc are all entities. Ideally all entities get a collection in the database.
  
 ## **User**
-user (or student in our case) is anyone who "uses" or logs into the system in order to view the content, and engage with it.
+USER (or student in our case) is anyone who "uses" or logs into the system in order to view the content, and engage with it.
 
 The following details are stored about the user:
 - Personal details
@@ -16,12 +16,12 @@ The following details are stored about the user:
   - current education level - high school, under grad, grad, etc. `enum`
   - social accounts : `Array<{site: string, url:string}>`
   - profile photo `url`
-- Details about account on platform
+  - details about account on platform
   - member since `date`
   - last logged in `date`
   - account status (blocked, suspended, verified, unverified) `enum`
   - account type (student, assistant, instructor, admin) `enum`
-- Interation with entities
+  - interation with entities
   - courses enrolled
     ```
     Array<{
@@ -39,10 +39,10 @@ The following details are stored about the user:
 
 
 ## **Course**
-course is a sequential arrangement of **videos** on a similar context. Courses are just an abstraction of a collection of videos, so the schema is mainly metadata.
+Course is a sequential arrangement of **videos** on a similar context. Courses are just an abstraction of a collection of videos, so the schema is mainly metadata.
 
 The following details are as follows:
-- Course details
+- Course Details
   - title
   - category (web dev, app dev, cloud native, soft skills, ...)
   - instructors `Array<user.id>`
@@ -63,7 +63,7 @@ The following details are as follows:
 Reviews are an important part of offerings, and are required for further analysis.
 
 The following details are stored about a review
-- Public data of a review
+  - public data of a review
   - rating `number`
   - author `user.id`
   - date published `date`
@@ -74,7 +74,7 @@ The following details are stored about a review
 
 
 # Modules
-modules are stored in the `src/modules/<module.name>` directory.
+Modules are stored in the `src/modules/<module.name>` directory.
 
 ## User Module
 User module deals with everything related to a user / student / profile on the application.
@@ -106,7 +106,7 @@ Course modules does everything related to course on the application
 
 
 ## Review Module
-review module deals with everything related to reviews of a course
+Review module deals with everything related to reviews of a course
 
 - Routes
   - to list all reviews by a user
